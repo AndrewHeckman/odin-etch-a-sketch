@@ -18,4 +18,14 @@ function makeGrid(x) {
 
     grid.appendChild(row);
   }
+  grid.addEventListener("mouseover", hoverOn);
+  grid.addEventListener("mouseout", hoverOff);
+}
+
+function hoverOn(event) {
+  event.target.style.backgroundColor = "violet"
+}
+
+function hoverOff(event) {
+  event.target.style.backgroundColor = "";
 }
