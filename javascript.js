@@ -18,6 +18,7 @@ function makeGrid(x) {
       let square = document.createElement("div");
       square.setAttribute("class", "square");
       square.setAttribute("id", `square-${i}-${j}`);
+      randomColor(square);
       row.appendChild(square);
     }
     grid.appendChild(row);
@@ -34,9 +35,20 @@ function replaceGrid() {
 }
 
 function hoverOn(event) {
-  event.target.style.backgroundColor = "violet"
+  // event.target.style.backgroundColor = "violet"
+  let opacity = parseFloat(event.target.style.opacity);
+  if (opacity >= 1) return;
+  else event.target.style.opacity = opacity + 0.1;
 }
 
 function hoverOff(event) {
-  event.target.style.backgroundColor = "";
+  // event.target.style.backgroundColor = "";
+}
+
+function randomColor(square) {
+  let r = Math.floor(Math.random() * 255);
+  let g = Math.floor(Math.random() * 255);
+  let b = Math.floor(Math.random() * 255);
+  square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+  square.style.opacity = 0;
 }
