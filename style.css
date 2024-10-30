@@ -1,7 +1,3 @@
-* {
-  border: solid 2px red;
-}
-
 .container {
   display: flex;
 }
@@ -13,4 +9,10 @@
 
 #grid {
   flex-direction: column;
+}
+
+#replace-grid {
+  max-width: fit-content;
+  margin: auto;
+  display: block;
 }
